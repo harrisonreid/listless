@@ -1,3 +1,92 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* SASS variables */
+$listless_blue: #99C5D5;
+
+/* Top Level Container */
+#static_pages_container{
+	position: absolute;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	top: 0;
+	left: 0;
+}
+
+.full_page_image{
+	position: relative;
+	padding: 0 0 0 0;
+  margin: 0 0 0 0;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	text-align: center;
+  background:url(/leafy.jpg) no-repeat center center;
+}
+
+/* Title Panel Styles */
+
+#title_panel{
+	position: absolute;
+	top: calc(50% - 92.5px);
+	left: 0;
+	width: 100%;
+	height: 185px;
+	background-color: black;
+	opacity: 0.76;
+	box-shadow: 0 0 150px -40px white;
+}
+
+#title_content_container{
+	position: absolute;
+	top: calc(50% - 92.5px);
+	left: 0;
+	width: 100%;
+	height: 185px;
+}
+
+#title{
+	position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 190px);
+	height: 100px;
+	line-height: 22px;
+		h1{
+		color: white;
+		opacity: 1;
+		font-size: 57px;
+	  font-family: 'Montserrat Alternates', sans-serif;
+	  letter-spacing: 3px;
+	}
+
+}
+
+/* Logo Styles */
+
+#listless_logo{
+	position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% + 90px);
+	width: 100px;
+	height: 100px;
+	background-color: $listless_blue;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	span{
+		color: white;
+		opacity: 1;
+		font-size: 60px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    line-height: 100px;
+	}
+}
+
+
+
+
