@@ -1,0 +1,10 @@
+<div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Add New List</h2>
+ 		<%= form_for(@list) do |f| %>
+ 		<div class="form_field">
+ 			<%= f.text_area :name, placeholder: "List Name" %>
+ 		</div>
+ 			<%= f.submit "Create" %>
+ 		<% end %>	
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>

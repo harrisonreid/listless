@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'static_pages#home'
+  root 'lists#index'
   resources :lists
   devise_for :users
 
