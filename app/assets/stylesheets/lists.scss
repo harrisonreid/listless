@@ -6,6 +6,10 @@
 $listless_blue: #99C5D5;
 $dark_listless_blue: #6A99A5;
 
+body{
+
+}
+
 #list_index_container{
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
@@ -35,8 +39,22 @@ $dark_listless_blue: #6A99A5;
 	top: 0;
 	height: 100%;
 	width: 72%;
-	overflow-vertical: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 25px;
+	overflow: scroll;
 
+
+}
+
+.task_item{
+ 	background-color: white;
+ 	width: 100%;
+ 	height: 50px;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ 	padding-left: 15px;
+	line-height: 50px;
 }
 
 #listless_logo_main{
@@ -61,14 +79,42 @@ $dark_listless_blue: #6A99A5;
 	}
 }
 
-#list_navigation_item{
+.list_navigation_item{
 	width: 100%;
 	height: 40px;
-	color: black;
 	font-size: 20px;
 	text-align: right;
 	padding-right: 20px;
-	line-height: 35px;
+	line-height: 40px;
 	font-family: "Muli";
 	color: #bdbdbd;
+	a{
+		color: #aaaaaa;
+	}
+	a:hover{
+		color: #848484;
+	}
+}
+
+.highlight{
+	background-color: #eaf3f6;
+}
+
+#new_list_button_container{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 90px;
+	padding-bottom: 40px;
+	line-height: 90px;
+	font-size: 50px;
+	text-align: center;
+	color: #bdbdbd;
+	a{
+		color: #aaaaaa;
+	}
+	a:hover{
+		color: #848484;
+	} 
 }

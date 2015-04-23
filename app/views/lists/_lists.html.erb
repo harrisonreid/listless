@@ -1,5 +1,17 @@
-<% @lists.each do |l| %>
-	<div id="list_navigation_item">
-		<%= l.name %>
-	</div>
+<% @user_lists.each do |l| %>
+
+	<% if l.id == @current_list.id %>
+
+		<div class="list_navigation_item highlight">
+			<%= link_to l.name, list_path(l, :set_current_list => l.id), :remote => true %>
+		</div>
+
+	<% else %>
+
+		<div class="list_navigation_item">
+			<%= link_to l.name, list_path(l, :set_current_list => l.id), :remote => true %>
+		</div>
+
+	<% end %>
+
 <% end %>

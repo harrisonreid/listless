@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
   root 'lists#index'
-  resources :lists
+
   devise_for :users
+
+  resources :lists
+  resources :tasks
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

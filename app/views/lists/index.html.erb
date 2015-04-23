@@ -1,15 +1,22 @@
 <div id="list_navigation_sidebar">
+
 	<div id="listless_logo_main">
 		<span>li</span>
 	</div>
+
 	<div id="users_lists_container">
 		<%= render 'lists'  %>
 	</div>
-<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+	<div id="new_list_button_container">
+		<a href="#" data-reveal-id="add_list"><%= fa_icon "plus" %></a>
+	</div>
 
 </div>
 
 <div id="main_content">
+	<%= render 'new_task_form' %>
+	<%= render 'shared/task_list' %>
 </div>
 
 <%= render 'new_list_form' %>

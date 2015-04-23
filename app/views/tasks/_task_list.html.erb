@@ -1,0 +1,9 @@
+<% unless @tasks.blank? %>
+	<% @tasks.each do |t| %>
+			<div class="task_item">
+				<div id="task_text">
+        	<%= t.content %>
+				</div>
+			</div>
+	<% end %>
+<% end %>
