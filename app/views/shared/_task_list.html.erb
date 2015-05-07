@@ -1,7 +1,21 @@
 <% unless @tasks.blank? %>
 	<% @tasks.each do |t| %>
 			<div class="task_item">
+				<div id="options">
+        	<%=link_to toggle_completion_path(list_id: t.list_id, task_id: t.id), remote: true do %>
+						<div class="uncompleted_checkbox"><%=fa_icon "check"%></div>
+					<% end %>
+				</div>
+				<div class="task_text">
         	<%= t.content %>
+				</div>
+        	<div class="task_edit_reveal_button"><%=fa_icon "angle-double-down" %></div>
+        	  <div class="task_details">
+						<hr>
+        	  Here are all the task details to edit </br>
+        		<%= link_to "delete", t, method: :delete, remote: true, data: { confirm: "You sure?" } %>
+
+        		</div>
 			</div>
 	<% end %>
 <% end %>

@@ -3,6 +3,7 @@
 	<% if l.id == @current_list.id %>
 
 		<div class="list_navigation_item highlight">
+			<span class="edit_list_button"><a href="#" data-reveal-id="edit_list"><%= fa_icon "gear" %></a></span>
 			<%= link_to l.name, list_path(l, :set_current_list => l.id), :remote => true %>
 		</div>
 

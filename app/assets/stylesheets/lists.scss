@@ -48,13 +48,16 @@ body{
 }
 
 .task_item{
+	position: relative;
  	background-color: white;
  	width: 100%;
- 	height: 50px;
+ 	min-height: 46px;
  	margin-top: 10px;
  	margin-bottom: 10px;
  	padding-left: 15px;
-	line-height: 50px;
+ 	padding-right: 15px;
+	line-height: 44px;
+	border-radius: 5px;
 }
 
 #listless_logo_main{
@@ -117,4 +120,42 @@ body{
 	a:hover{
 		color: #848484;
 	} 
+}
+
+.completed_task_list{
+	display: none;
+}
+
+.reveal_button{
+	position: relative;
+	left: calc(50% - 90px);
+	padding-top: 10px;
+	cursor: pointer;
+	width: 180px;
+	height: 35px;
+	margin: 20px;
+	text-align: center;
+    background: #FFF;
+    color: gray;
+    font: bold 11px "Helvetica";
+    padding: 12px;
+    text-decoration: none;
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#list_delete_link{
+	position: absolute;
+	left: 0;
+	color: black;
+	font-size: 12px;
+}
+
+
+.edit_list_button{
+	float: left;
+	padding-left: 20px;
+	
 }

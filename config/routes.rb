@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :lists
   resources :tasks
 
+  get '/:list_id/complete/:task_id' => 'tasks#toggle_completion', as: :toggle_completion
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

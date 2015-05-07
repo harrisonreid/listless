@@ -15,8 +15,20 @@
 </div>
 
 <div id="main_content">
+	<div id="new_task_form">
 	<%= render 'new_task_form' %>
-	<%= render 'shared/task_list' %>
+	</div>
+	<div id="task_list">
+		<%= render 'shared/task_list' %>
+	</div>
+	<div class="reveal_button">Show Completed Tasks</div>
+	<div class="completed_task_list" %>
+		<%= render 'shared/completed_task_list' %>
+	</div>
 </div>
 
 <%= render 'new_list_form' %>
+<div id="edit_list_form_container">
+	<%= render 'edit_list_form' %>
+</div>
+

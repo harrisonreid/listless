@@ -1,3 +1,12 @@
-$('#main_content').html("<%= j (render 'lists/new_task_form') %> <%= j (render 'shared/task_list') %>");
-$('#users_lists_container').html("<%= j (render 'lists') %>");
+$('#new_task_form').html("<%= j (render 'lists/new_task_form') %>");
+$('#task_list').html("<%= j (render 'shared/task_list') %> ");
+$('.completed_task_list').html("<%= j (render 'shared/completed_task_list') %>");
+$('#users_lists_container').html("<%= j (render 'lists/lists') %>");
+$('#edit_list_form_container').html("<%= j (render 'lists/edit_list_form') %>");
 
+$(document).ready(function () {
+
+		$(".task_edit_reveal_button").click(function(){
+	    $(this).next('.task_details').slideToggle();
+	});
+});

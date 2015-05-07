@@ -9,7 +9,6 @@ before_action :set_form_instance_variables
 
 #FFFFIIIIXXXXXX INDEX ACTION TO DISPLAY CUURENT LIST NOT 4
 def index
-  	@tasks=List.find(4).tasks
 end
 
 def show
@@ -23,6 +22,17 @@ def create
 	current_user.lists.create!(list_params)
 	redirect_to root_url
 end
+
+def update
+	list_to_edit=List.find(params[:id])
+	list_to_edit.update_attributes(list_params)
+	redirect_to root_url
+end
+
+def destroy
+	List.find(params[:id]).destroy
+end
+
 
 
 	private
@@ -55,17 +65,23 @@ end
 		if params[:set_current_list].blank? && session[:current_list].blank?
 			@current_list=current_user.lists.first
 		elsif params[:set_current_list].blank?
-			@current_list=current_user.lists.find(session[:current_list])
-		else
-			@current_list=current_user.lists.find(params[:set_current_list])
+			@current_list=current_user.lists.find_by_id(session[:current_list]) 
+		elsif
+			@current_list=current_user.lists.find_by_id(params[:set_current_list])
 		end
+
+		if @current_list==nil
+			@current_list=current_user.lists.first
+		end
+
 	end	
 
 	# Finds the related tasks for the @current_list instance variable
 	# previously defined.
 
 	def find_current_list_tasks
-		@tasks=@current_list.tasks.all
+		@tasks=@current_list.tasks.where(completed: [false, nil])
+		@completed_tasks=@current_list.tasks.where(completed: true)	
 	end
 
 	# Set the required instance variables for rendering

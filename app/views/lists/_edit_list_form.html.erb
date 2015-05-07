@@ -1,0 +1,12 @@
+<div id="edit_list" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Edit List</h2>
+  	<%= @current_list.name %>
+ 		<%= form_for(@current_list) do |f| %>
+ 		<div class="form_field">
+ 			<%= f.text_area :name, placeholder: "List Name" %>
+ 			<%= link_to "delete", @current_list, method: :delete, remote: true, id: "list_delete_link" ,class: "close-reveal-modal", data: { confirm: "Are you sure?" } %>
+ 		</div>
+ 			<%= f.submit "Edit" %>
+ 		<% end %>	
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>

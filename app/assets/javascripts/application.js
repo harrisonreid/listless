@@ -16,4 +16,22 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function () {
+
+	$(".reveal_button").click(function(){
+	    $(".completed_task_list").slideToggle();
+	});
+
+});
+
+
+
+$(document).ready(function () {
+
+		$(".task_edit_reveal_button").click(function(){
+	    $(this).next('.task_details').slideToggle("swing");
+	});
+});

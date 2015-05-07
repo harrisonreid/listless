@@ -12,10 +12,27 @@ class TasksController < ApplicationController
 		List.find(@current_list.id).tasks.create(task_params)
 	end
 
+	def toggle_completion
+	current_task=Task.find_by_id(params[:task_id])
+
+		if current_task.completed == false||current_task.completed.blank?
+			current_task.completed =true
+	  	current_task.save
+	  elsif current_task.completed ==true
+			current_task.completed =false
+	  	current_task.save
+	  end
+		find_current_list_tasks
+	end
+
+	def destroy
+		Task.find(params[:id]).destroy
+	end
+
 		private
 
 			def task_params
-				params.require(:task).permit(:content, :list_id)
+				params.require(:task).permit(:content, :list_id, :task_id)
 			end
 
 		  # Sets the current_list session cookie if it doesn't already exist.
@@ -49,7 +66,8 @@ class TasksController < ApplicationController
 			# previously defined.
 
 			def find_current_list_tasks
-				@tasks=@current_list.tasks.all
+				@tasks=@current_list.tasks.where(completed: [false, nil])
+				@completed_tasks=@current_list.tasks.where(completed: true)	
 			end
 
 			# Set the required instance variables for rendering
